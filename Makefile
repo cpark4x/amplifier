@@ -44,6 +44,9 @@ default: ## Show essential commands
 	@echo "Blog Writing:"
 	@echo "  make blog-write      Create a blog post from your ideas"
 	@echo ""
+	@echo "Project Assistant:"
+	@echo "  make project-assist  Complete projects with AI coaching"
+	@echo ""
 	@echo "Transcription:"
 	@echo "  make transcribe      Transcribe audio/video files or YouTube URLs"
 	@echo "  make transcribe-index Generate index of all transcripts"
@@ -523,6 +526,17 @@ blog-write-example: ## Run blog writer with example data
 	@uv run python -m scenarios.blog_writer \
 		--idea scenarios/blog_writer/tests/sample_brain_dump.md \
 		--writings-dir scenarios/blog_writer/tests/sample_writings/
+
+# Project Assistant
+project-assist: ## Start or resume a project with AI coaching. Usage: make project-assist PROJECT="Kitchen Renovation"
+	@if [ -z "$(PROJECT)" ]; then \
+		echo "Error: Please provide a project name. Usage: make project-assist PROJECT=\"Kitchen Renovation\""; \
+		exit 1; \
+	fi
+	@echo "🎯 Starting Project Assistant..."; \
+	echo "  Project: $(PROJECT)"; \
+	echo "  Data: .data/project_assistant/"; \
+	uv run python -m scenarios.project_assistant --project "$(PROJECT)"
 
 # Tips Synthesis
 tips-synthesizer: ## Synthesize tips from markdown files into cohesive document. Usage: make tips-synthesizer INPUT=tips_dir/ OUTPUT=guide.md [RESUME=true] [VERBOSE=true]
