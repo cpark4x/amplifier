@@ -10,3 +10,6 @@
 [submodule "superwhisperr"]
 	path = superwhisperr
 	url = https://github.com/cpark4x/superwhisperr.git
+[submodule "outcomist"]
+	path = outcomist
+	url = https://github.com/cpark4x/outcomist.git
