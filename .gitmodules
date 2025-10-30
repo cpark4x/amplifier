@@ -1,0 +1,12 @@
+[submodule "ridecast"]
+	path = ridecast
+	url = git@github.com:cpark4x/ridecast.git
+[submodule "visioncaster"]
+	path = visioncaster
+	url = git@github.com:cpark4x/visioncaster.git
+[submodule "remember-twelve"]
+	path = remember-twelve
+	url = git@github.com:cpark4x/remember-twelve.git
+[submodule "superwhisperr"]
+	path = superwhisperr
+	url = https://github.com/cpark4x/superwhisperr.git
